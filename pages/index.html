@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-	<script src="index.js"></script>
-  </body>
+    <title>WhatPizza | HomePage</title>
+    <link rel="stylesheet" href="C:\Users\StariGeri\Documents\Egyetem\4.félév\Szerver oldali JS\WhatPizza\style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Varela+Round&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section class="hero-section">
+        <h2 class="title">WhatPizza</h2>
+        <canvas id="canvas3d"></canvas>
+        <script type="module">
+            import { Application } from '/splinetool/runtime';
+
+            const canvas = document.getElementById('canvas3d');
+            const app = new Application(canvas);
+            app.load('https://prod.spline.design/wHiTo7qQ2WpsnDJn/scene.splinecode');
+
+
+        </script>
+    </section>
+
+</body>
+
 </html>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: var(--bgColor);
+    }
+
+    .hero-section {
+        height: 30vh;
+        width: 100vw;
+        background-color: var(--bgColor);
+    }
+
+    .canvas3d {
+        height: fit-content;
+        width: fit-content;
+        background-color: var(--bgColor);
+    }
+
+    .title {
+        text-align: center;
+        font-size: 50px;
+        font-family: 'Varela Round', sans-serif;
+        font-weight: 600;
+        color: #80ed99;
+    }
+</style>
