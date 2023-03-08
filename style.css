@@ -4,6 +4,54 @@
   --bgColor: #f0fff1;
 }
 
+.title {
+  text-align: center;
+  width: fit-content;
+  font-size: 50px;
+  font-family: "Varela Round", sans-serif;
+  font-weight: 600;
+  color: #57cc99;
+  margin: 0 auto;
+}
+.cursor {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  border-radius: 100%;
+  background: #57cc99;
+  opacity: 10%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.7s linear;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/*PLACEHOLDER STYLE*/
+::-webkit-input-placeholder {
+  /* Edge */
+  font-family: "Open Sans", sans-serif;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font-family: "Open Sans", sans-serif;
+}
+
+::placeholder {
+  font-family: "Open Sans", sans-serif;
+}
+
 /*Css and HTML reset*/
 html,
 body,
