@@ -6,7 +6,7 @@
     <meta lang="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WhatPizza | Search</title>
+    <title>Search | WhatPizza </title>
     <link rel="stylesheet" href="C:\Users\StariGeri\Documents\Egyetem\4.félév\Szerver oldali JS\WhatPizza\style.css">
 
     <!-- Google Fonts -->
@@ -17,8 +17,144 @@
 </head>
 
 <body>
-    <h2 class="title">WhatPizza</h2>
+    <section class="search-section">
+        <h2 class="title">WhatPizza</h2>
+        <div class="cursor"></div>
+
+        <h3 class="searchedFor">Search: {INPUT}</h3>
+        <div class="result-container">
+            <table class="tables">
+                <colgroup>
+                    <col span="column">
+                    <col span="column">
+                    <col span="column">
+                    <col span="column">
+                <tr class="table-row">
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Parking</th>
+                    <th>Delivery</th>
+                </tr>
+                <tr class="table-row">
+                    <td>Vapiano</td>
+                    <td>1111. Bolt utca 22.</td>
+                    <td>No</td>
+                    <td>Yes - Wolt</td>
+                </tr>
+                <tr class="table-row">
+                    <td>PizzaHut</td>
+                    <td>1221. Fo utca 10.</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+            </table>
+            <div class="buttons">
+                <a class="button-link" href="pizzas.html"><button class="btn btn1">Pizzas</button>
+                </a>
+                <a class="button-link" href="pizzas.html"><button class="btn btn1">Pizzas</button>
+                </a>
+            </div>
+        </div>
+        <div class="button-container">
+            <a class="button-link" href="index.html"><button class="btn btn1">Go Back</button></a>
+        </div>
+    </section>
 
 </body>
 
 </html>
+<script>
+    // cursor follow
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.pageX + 'px';
+        cursor.style.top = e.pageY + 'px';
+    })
+</script>
+<style>
+    .search-section {
+        min-height: 100vh;
+        height: fit-content;
+        width: 100%;
+        max-width: 1000px;
+        background-color: white;
+        margin: 50px auto;
+    }
+
+    .searchedFor {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 30px;
+        font-weight: 500;
+        max-width: 500px;
+        text-align: left;
+        margin-top: 50px;
+    }
+
+    .result-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        margin: 50px 0;
+    }
+
+    .tables {
+        max-width: 800px;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        border: 2px solid #57cc99;
+    }
+
+    .tables th {
+        background-color: #c7f9cc;
+        border: 2px solid #57cc99;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        height: 40px;
+    }
+
+    .tables td {
+        border: 2px solid #57cc99;
+        font-size: 16px;
+        text-align: right;
+        height: 60px;
+    }
+
+    .column {
+        width: 20%;
+        border-left: 2px solid #57cc99;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        margin-top: 40px;
+        gap: 15px;
+    }
+
+    .btn {
+        background: #c7f9cc;
+        border: none;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 12px 16px;
+        cursor: pointer;
+        color: black;
+        transition: 0.6s ease-in-out;
+        position: relative;
+        border-radius: 5px;
+    }
+
+    .btn:hover {
+        background-color: #57cc99;
+        transition: 0.6s ease-in-out;
+    }
+    .button-container{
+        width:fit-content;
+        height: fit-content;
+        margin: 50px auto;
+    }
+</style>
