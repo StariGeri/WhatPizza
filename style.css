@@ -24,6 +24,17 @@
   pointer-events: none;
   transition: all 0.7s linear;
 }
+.cursor-mini {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background: #57cc99;
+  opacity: 10%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.7s linear;
+}
 * {
   margin: 0;
   padding: 0;

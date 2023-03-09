@@ -19,15 +19,119 @@
 <body>
     <section class="pizza-section">
         <h2 class="title">WhatPizza</h2>
-        <div class="cursor"></div>
+        <div class="cursor-mini"></div>
+        <div class="menu-container">
+            <table class="tables">
+                <colgroup>
+                    <col span="column">
+                    <col span="column">
+                    <col span="column">
+                    <col span="column">
+                <tr class="table-row">
+                    <th>Pizza</th>
+                    <th>Size (cm)</th>
+                    <th>Price (Ft)</th>
+                    <th>Sauce</th>
+                </tr>
+                <tr class="table-row">
+                    <td>Quattro Formaggi</td>
+                    <td>32</td>
+                    <td>3200</td>
+                    <td>Tomato</td>
+                </tr>
+                <tr class="table-row">
+                    <td>Special Pizza</td>
+                    <td>28</td>
+                    <td>2800</td>
+                    <td>Sour Cream</td>
+                </tr>
+            </table>
+        </div>
+        <div class="button-container">
+            <a class="button-link" href="search.html"><button class="btn btn1">Go Back</button></a>
+        </div>
 </body>
 
 </html>
 <script>
     // cursor follow
-    const cursor = document.querySelector('.cursor');
+    const cursor = document.querySelector('.cursor-mini');
     document.addEventListener('mousemove', (e) => {
         cursor.style.left = e.pageX + 'px';
         cursor.style.top = e.pageY + 'px';
     })
 </script>
+
+<style>
+    .pizza-section {
+        min-height: 100vh;
+        height: fit-content;
+        width: 100%;
+        max-width: 1000px;
+        background-color: white;
+        margin: 50px auto;
+    }
+
+    .menu-container {
+        position: relative;
+        margin: 100px auto;
+        max-width: 600px;
+        max-height: 600px;
+        width: 100%;
+        height: 100%;
+        opacity: 100%;
+    }
+
+    .tables {
+        max-width: 800px;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        border: 2px solid #57cc99;
+    }
+
+    .tables th {
+        background-color: #c7f9cc;
+        border: 2px solid #57cc99;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        height: 40px;
+    }
+
+    .tables td {
+        border: 2px solid #57cc99;
+        font-size: 16px;
+        text-align: right;
+        height: 60px;
+    }
+
+    .column {
+        width: 20%;
+        border-left: 2px solid #57cc99;
+    }
+
+    .btn {
+        background: #c7f9cc;
+        border: none;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 12px 16px;
+        cursor: pointer;
+        color: black;
+        transition: 0.6s ease-in-out;
+        position: relative;
+        border-radius: 5px;
+    }
+
+    .btn:hover {
+        background-color: #57cc99;
+        transition: 0.6s ease-in-out;
+    }
+
+    .button-container {
+        width: fit-content;
+        height: fit-content;
+        margin: 50px auto;
+    }
+</style>
