@@ -6,7 +6,7 @@
     <meta lang="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Search | WhatPizza </title>
+    <title>Pizzas | WhatPizza </title>
     <link rel="stylesheet" href="C:\Users\StariGeri\Documents\Egyetem\4.félév\Szerver oldali JS\WhatPizza\style.css">
 
     <!-- Google Fonts -->
@@ -19,7 +19,10 @@
 <body>
     <section class="pizza-section">
         <h2 class="title">WhatPizza</h2>
-        <div class="cursor-mini"></div>
+        <p class="disclaimer">Click on the row of a Pizza to <span class="span">edit</span> or <span
+                class="span">delete</span> it</p>
+        <div class="cursor"></div>
+        <h3 class="searchedFor">Pizzas at: "Vapiano"</h3>
         <div class="menu-container">
             <table class="tables">
                 <colgroup>
@@ -33,13 +36,13 @@
                     <th>Price (Ft)</th>
                     <th>Sauce</th>
                 </tr>
-                <tr class="table-row">
+                <tr class="table-row" class="table-row" onclick="window.location='edit.html'">
                     <td>Quattro Formaggi</td>
                     <td>32</td>
                     <td>3200</td>
                     <td>Tomato</td>
                 </tr>
-                <tr class="table-row">
+                <tr class="table-row" class="table-row" onclick="window.location='edit.html'">
                     <td>Special Pizza</td>
                     <td>28</td>
                     <td>2800</td>
@@ -49,14 +52,14 @@
         </div>
         <div class="buttons">
             <a class="button-link" href="new.html"><button class="btn">New</button></a>
-            <a class="button-link" href="search.html"><button class="btn btn1">Go Back</button></a>
+            <a class="button-link" href="search.html"><button class="btn btn1">Back</button></a>
         </div>
 </body>
 
 </html>
 <script>
     // cursor follow
-    const cursor = document.querySelector('.cursor-mini');
+    const cursor = document.querySelector('.cursor');
     document.addEventListener('mousemove', (e) => {
         cursor.style.left = e.pageX + 'px';
         cursor.style.top = e.pageY + 'px';
@@ -71,6 +74,7 @@
         max-width: 1000px;
         background-color: white;
         margin: 50px auto;
+        padding: 20px;
     }
 
     .menu-container {
@@ -83,11 +87,39 @@
         opacity: 100%;
     }
 
+    .searchedFor {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 30px;
+        font-weight: 500;
+        max-width: 500px;
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    .disclaimer {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        max-width: 500px;
+        text-align: center;
+        width: fit-content;
+        margin: 10px auto;
+    }
+
+    .span {
+        color: #57cc99;
+        font-weight: 500;
+    }
+
     .tables {
         max-width: 800px;
         width: 100%;
         font-family: 'Open Sans', sans-serif;
         border: 2px solid #57cc99;
+    }
+
+    .table-row {
+        cursor: pointer;
     }
 
     .tables th {
@@ -102,7 +134,8 @@
     .tables td {
         border: 2px solid #57cc99;
         font-size: 16px;
-        text-align: right;
+        text-align: center;
+        vertical-align: middle;
         height: 60px;
     }
 
@@ -113,7 +146,7 @@
 
     .btn {
         background: #c7f9cc;
-        border: none;
+        border: solid 2px #c7f9cc;
         font-family: 'Open Sans', sans-serif;
         font-weight: 500;
         font-size: 16px;
@@ -124,7 +157,8 @@
         position: relative;
         border-radius: 5px;
     }
-    .btn1{
+
+    .btn1 {
         background: none;
         border: 2px solid #57cc99;
     }
@@ -133,6 +167,7 @@
         background-color: #57cc99;
         color: white;
         transition: 0.6s ease-in-out;
+        border: solid 2px #57cc99;
     }
 
     .buttons {
@@ -142,5 +177,17 @@
         display: flex;
         justify-content: space-between;
         gap: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .menu-container {
+            position: relative;
+            margin: 50px auto;
+            max-width: 600px;
+            max-height: 600px;
+            width: 100%;
+            height: 100%;
+            opacity: 100%;
+        }
     }
 </style>

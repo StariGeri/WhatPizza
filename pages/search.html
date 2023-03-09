@@ -22,6 +22,7 @@
         <div class="cursor"></div>
 
         <h3 class="searchedFor">Search results for: "Vapiano"</h3>
+        <p class="disclaimer">Click on the row of the desired restaurant to see their Pizzas</p>
         <div class="result-container">
             <table class="tables">
                 <colgroup>
@@ -29,34 +30,29 @@
                     <col span="column">
                     <col span="column">
                     <col span="column">
+                </colgroup>
                 <tr class="table-row">
                     <th>Name</th>
                     <th>Address</th>
                     <th>Parking</th>
                     <th>Delivery</th>
                 </tr>
-                <tr class="table-row">
+                <tr class="table-row" onclick="window.location='pizzas.html'">
                     <td>Vapiano</td>
                     <td>1111. Bolt utca 22.</td>
                     <td>No</td>
                     <td>Yes - Wolt</td>
                 </tr>
-                <tr class="table-row">
+                <tr class="table-row" onclick="window.location='pizzas.html'">
                     <td>Vapiano</td>
                     <td>1221. Fo utca 10.</td>
                     <td>Yes</td>
                     <td>Yes</td>
                 </tr>
             </table>
-            <div class="buttons">
-                <a class="button-link" href="pizzas.html"><button class="btn btn1">Pizzas</button>
-                </a>
-                <a class="button-link" href="pizzas.html"><button class="btn btn1">Pizzas</button>
-                </a>
-            </div>
         </div>
         <div class="button-container">
-            <a class="button-link" href="index.html"><button class="btn btn1">Go Back</button></a>
+            <a class="button-link" href="index.html"><button class="btn btn1">Back</button></a>
         </div>
     </section>
 
@@ -79,6 +75,7 @@
         max-width: 1000px;
         background-color: white;
         margin: 50px auto;
+        padding: 20px;
     }
 
     .searchedFor {
@@ -94,8 +91,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 20px;
         margin: 50px 0;
+    }
+
+    .disclaimer {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        max-width: 500px;
+        text-align: left;
+        margin-top: 10px;
     }
 
     .tables {
@@ -103,6 +108,10 @@
         width: 100%;
         font-family: 'Open Sans', sans-serif;
         border: 2px solid #57cc99;
+    }
+
+    .table-row {
+        cursor: pointer;
     }
 
     .tables th {
@@ -114,11 +123,18 @@
         height: 40px;
     }
 
+    .link {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
     .tables td {
         border: 2px solid #57cc99;
         font-size: 16px;
         text-align: right;
         height: 60px;
+        text-align: center;
+        vertical-align: middle;
     }
 
     .column {
@@ -126,16 +142,8 @@
         border-left: 2px solid #57cc99;
     }
 
-    .buttons {
-        display: flex;
-        flex-direction: column;
-        margin-left: 10px;
-        margin-top: 40px;
-        gap: 15px;
-    }
-
     .btn {
-        background: #c7f9cc;
+        background: none;
         border: none;
         font-family: 'Open Sans', sans-serif;
         font-weight: 500;
@@ -146,12 +154,14 @@
         transition: 0.6s ease-in-out;
         position: relative;
         border-radius: 5px;
+        border: solid 2px #57cc99;
     }
 
     .btn:hover {
         background-color: #57cc99;
         transition: 0.6s ease-in-out;
         color: white;
+        border: solid 2px #57cc99;
     }
 
     .button-container {
