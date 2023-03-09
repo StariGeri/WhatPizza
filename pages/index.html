@@ -19,6 +19,7 @@
 <body>
     <section class="hero-section">
         <h2 class="title">WhatPizza</h2>
+        <h3 class = "easterEgg">One Slice At A Time</h3>
         <div class="cursor"></div>
         <div class="hero-container">
             <div class="hero-content">
@@ -156,6 +157,23 @@
         display: flex;
         flex-basis: 50%;
     }
+    .easterEgg{
+        color:#57cc99;
+        font-family: "Varela Round", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        width:fit-content;
+        opacity: 0;
+        transition: 0.5s ease;
+        margin-left: 30px;
+    }
+    .hero-section .easterEgg:hover{
+        opacity: 1;
+        transition: 0.5s ease;
+    }
+    .easterEgg:hover ~ .cursor{
+        opacity: 0.2;
+    }
 
     .hero-section {
         height: 100vh;
@@ -183,18 +201,6 @@
         align-items: start;
         padding-bottom: 50px;
         flex-basis: 50%;
-    }
-
-    .subtitle {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 35px;
-        font-weight: 500;
-        max-width: 500px;
-    }
-
-    .highlight {
-        font-weight: bold;
-        color: #57cc99;
     }
 
     .wrapper {

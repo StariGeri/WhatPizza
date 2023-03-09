@@ -13,6 +13,16 @@
   color: #57cc99;
   margin: 0 auto;
 }
+.subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 35px;
+  font-weight: 500;
+  max-width: 500px;
+}
+.highlight {
+  font-weight: bold;
+  color: #57cc99;
+}
 .cursor {
   position: fixed;
   width: 400px;

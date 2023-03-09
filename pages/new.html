@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search | WhatPizza </title>
+    <link rel="stylesheet" href="C:\Users\StariGeri\Documents\Egyetem\4.félév\Szerver oldali JS\WhatPizza\style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Varela+Round&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="newSection">
+        <h3 class="subtitle">Add a new <span class="highlight"> Pizza</span></h3>
+        <div class="container">
+            <form>
+                <label class="label" for="pizza">Pizza</label>
+                <input class="input" type="text" name="pizza" id="pizza" placeholder="Pizza">
+                <label class="label" for="size">Size (cm)</label>
+                <input class="input" type="text" name="size" id="size" placeholder="Size">
+                <label class="label" for="price">Price (Ft)</label>
+                <input class="input" type="text" name="price" id="price" placeholder="Price">
+                <label class="label" for="sauce">Sauce</label>
+                <select class="input" name="sauce" id="sauce">
+                    <option value="tomato">Tomato</option>
+                    <option value="bbq">BBQ</option>
+                    <option value="garlic">Garlic</option>
+                </select>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<style>
+    .newSection {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f1faee;
+        height: fit-content;
+        width: 100%;
+        max-width: 800px;
+        margin: 100px auto;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .form {
+        width: 100%;
+        height: fit-content;
+    }
+</style>
