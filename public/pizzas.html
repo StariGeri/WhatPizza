@@ -6,8 +6,8 @@
     <meta lang="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Search | WhatPizza </title>
-    <link rel="stylesheet" href="C:\Users\StariGeri\Documents\Egyetem\4.félév\Szerver oldali JS\WhatPizza\style.css">
+    <title>Pizzas | WhatPizza </title>
+    <link rel="stylesheet" href="/style.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,44 +17,43 @@
 </head>
 
 <body>
-    <section class="search-section">
+    <section class="pizza-section">
         <h2 class="title">WhatPizza</h2>
+        <p class="disclaimer">Click on the row of a Pizza to <span class="span">edit</span> or <span
+                class="span">delete</span> it</p>
         <div class="cursor"></div>
-        <h3 class="searchedFor">Search results for: "Vapiano"</h3>
-        <p class="disclaimer">Click on the row of the desired restaurant to see their Pizzas</p>
-        <div class="result-container">
+        <h3 class="searchedFor">Pizzas at: "Vapiano"</h3>
+        <div class="menu-container">
             <table class="tables">
                 <colgroup>
                     <col span="column">
                     <col span="column">
                     <col span="column">
                     <col span="column">
-                </colgroup>
                 <tr class="table-row">
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Parking</th>
-                    <th>Delivery</th>
+                    <th>Pizza</th>
+                    <th>Size (cm)</th>
+                    <th>Price (Ft)</th>
+                    <th>Sauce</th>
                 </tr>
-                <tr class="table-row" onclick="window.location='pizzas.html'">
-                    <td>Vapiano</td>
-                    <td>1111. Bolt utca 22.</td>
-                    <td>No</td>
-                    <td>Yes - Wolt</td>
+                <tr class="table-row" class="table-row" onclick="window.location='edit.html'">
+                    <td>Quattro Formaggi</td>
+                    <td>32</td>
+                    <td>3200</td>
+                    <td>Tomato</td>
                 </tr>
-                <tr class="table-row" onclick="window.location='pizzas.html'">
-                    <td>Vapiano</td>
-                    <td>1221. Fo utca 10.</td>
-                    <td>Yes</td>
-                    <td>Yes</td>
+                <tr class="table-row" class="table-row" onclick="window.location='edit.html'">
+                    <td>Special Pizza</td>
+                    <td>28</td>
+                    <td>2800</td>
+                    <td>Sour Cream</td>
                 </tr>
             </table>
         </div>
-        <div class="button-container">
-            <a class="button-link" href="index.html"><button class="btn btn1">Back</button></a>
+        <div class="buttons">
+            <a class="button-link" href="new.html"><button class="btn">New</button></a>
+            <a class="button-link" href="search.html"><button class="btn btn1">Back</button></a>
         </div>
-    </section>
-
 </body>
 
 </html>
@@ -66,8 +65,9 @@
         cursor.style.top = e.pageY + 'px';
     })
 </script>
+
 <style>
-    .search-section {
+    .pizza-section {
         min-height: 100vh;
         height: fit-content;
         width: 100%;
@@ -77,20 +77,23 @@
         padding: 20px;
     }
 
+    .menu-container {
+        position: relative;
+        margin: 100px auto;
+        max-width: 600px;
+        max-height: 600px;
+        width: 100%;
+        height: 100%;
+        opacity: 100%;
+    }
+
     .searchedFor {
         font-family: 'Open Sans', sans-serif;
         font-size: 30px;
         font-weight: 500;
         max-width: 500px;
         text-align: left;
-        margin-top: 50px;
-    }
-
-    .result-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 50px 0;
+        margin-top: 20px;
     }
 
     .disclaimer {
@@ -98,8 +101,14 @@
         font-size: 14px;
         font-weight: 400;
         max-width: 500px;
-        text-align: left;
-        margin-top: 10px;
+        text-align: center;
+        width: fit-content;
+        margin: 10px auto;
+    }
+
+    .span {
+        color: #57cc99;
+        font-weight: 500;
     }
 
     .tables {
@@ -122,18 +131,12 @@
         height: 40px;
     }
 
-    .link {
-        text-decoration: none;
-        cursor: pointer;
-    }
-
     .tables td {
         border: 2px solid #57cc99;
         font-size: 16px;
-        text-align: right;
-        height: 60px;
         text-align: center;
         vertical-align: middle;
+        height: 60px;
     }
 
     .column {
@@ -142,8 +145,8 @@
     }
 
     .btn {
-        background: none;
-        border: none;
+        background: #c7f9cc;
+        border: solid 2px #c7f9cc;
         font-family: 'Open Sans', sans-serif;
         font-weight: 500;
         font-size: 16px;
@@ -153,19 +156,38 @@
         transition: 0.6s ease-in-out;
         position: relative;
         border-radius: 5px;
-        border: solid 2px #57cc99;
+    }
+
+    .btn1 {
+        background: none;
+        border: 2px solid #57cc99;
     }
 
     .btn:hover {
         background-color: #57cc99;
-        transition: 0.6s ease-in-out;
         color: white;
+        transition: 0.6s ease-in-out;
         border: solid 2px #57cc99;
     }
 
-    .button-container {
+    .buttons {
         width: fit-content;
         height: fit-content;
         margin: 50px auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .menu-container {
+            position: relative;
+            margin: 50px auto;
+            max-width: 600px;
+            max-height: 600px;
+            width: 100%;
+            height: 100%;
+            opacity: 100%;
+        }
     }
 </style>
