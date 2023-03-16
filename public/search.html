@@ -21,7 +21,11 @@
         <h2 class="title">WhatPizza</h2>
         <div class="cursor"></div>
         <h3 class="searchedFor">Search results for: "Vapiano"</h3>
-        <p class="disclaimer">Click on the row of the desired restaurant to see their Pizzas</p>
+        <p class="disclaimer">Click on the <span class="highlight">Row</span> of the desired restaurant to see their
+            Pizzas</p>
+        <p class="disclaimer">If you haven't found the <span
+            class="highlight">Restaurant</span> you're looking for, add it with the <span
+                class="highlight">New</span> button</p>
         <div class="result-container">
             <table class="tables">
                 <colgroup>
@@ -51,7 +55,8 @@
             </table>
         </div>
         <div class="button-container">
-            <a class="button-link" href="index.html"><button class="btn btn1">Back</button></a>
+            <a class="button-link" href="newRest.html"><button class="filledButton">New</button></a>
+            <a class="button-link" href="index.html"><button class="outlineButton">Back</button></a>
         </div>
     </section>
 
@@ -100,67 +105,6 @@
         max-width: 500px;
         text-align: left;
         margin-top: 10px;
-    }
-
-    .tables {
-        max-width: 800px;
-        width: 100%;
-        font-family: 'Open Sans', sans-serif;
-        border: 2px solid #57cc99;
-    }
-
-    .table-row {
-        cursor: pointer;
-    }
-
-    .tables th {
-        background-color: #c7f9cc;
-        border: 2px solid #57cc99;
-        font-size: 20px;
-        font-weight: 500;
-        text-align: center;
-        height: 40px;
-    }
-
-    .link {
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    .tables td {
-        border: 2px solid #57cc99;
-        font-size: 16px;
-        text-align: right;
-        height: 60px;
-        text-align: center;
-        vertical-align: middle;
-    }
-
-    .column {
-        width: 20%;
-        border-left: 2px solid #57cc99;
-    }
-
-    .btn {
-        background: none;
-        border: none;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 500;
-        font-size: 16px;
-        padding: 12px 16px;
-        cursor: pointer;
-        color: black;
-        transition: 0.6s ease-in-out;
-        position: relative;
-        border-radius: 5px;
-        border: solid 2px #57cc99;
-    }
-
-    .btn:hover {
-        background-color: #57cc99;
-        transition: 0.6s ease-in-out;
-        color: white;
-        border: solid 2px #57cc99;
     }
 
     .button-container {
