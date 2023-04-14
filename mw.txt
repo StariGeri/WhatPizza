@@ -1,0 +1,45 @@
+**Weboldal view-ok/pagek**
+
+-index.html: 
+    * Search bar: étteremre lehet keresni, gépelés után enterrel vagy
+        keresés(nagyító) gombbal lehet keresni.
+
+-search.html:
+    * A keresésnek megfelelően kilistázódnak az eredmények, vagy éppen semmi
+    * A keresési eredmények táblázatban kerülnek kilistázásra, ahol minden sor egy éttermet jelöl
+      ,persze csak akkor van több sor, ha a keresett szóval több találat is van(pl.: megegyező nevű éttermek)
+    * A keresett étteremhez tartozó sorra kattintva betöltődik a pizzas.html, ahol az adott étterem pizzáí listázódnak ki
+    *A "New" gombra kattintva betöltődik a newRest.html, ahol új éttermet lehet felvenni
+    * A "Back" gombra kattintva  a főoldalra lehet visszatérni - index.html
+
+-newRest.html:
+    * 4 input field jelenik meg, és az összes mező kitöltése kötelező
+    * Az "Add" gombra kattintva egy új étterem keletkezik az éttermeket kezelő táblában + a search.html betöltődik, ahol az újonnan felvett étterem (is) listázódik kilistázásra 
+    * A "Back" gombra kattintva  a search.html oldalra lehet visszatérni
+
+-pizzas.html:
+    * A keresett étteremhez tartozó pizzák kilistázódnak ki táblázatosan
+    * A keresett pizzához tartozó sorra kattintva betöltődik a editPizza.html, ahol az adott pizzát lehet szerkeszteni és/vagy törölni
+    * A "New" gombra kattintva betöltődik a newPizza.html, ahol új pizzát lehet felvenni
+    * Az "Edit" gombra kattintva betöltődik az editRest.html, ahol a kiválasztott éttermet lehet szerkeszteni és/vagy törölni
+    * A "Back" gombra kattintva  a search.html oldalra lehet visszatérni
+
+-editPizza.html:
+    * 3 input field + 1 select dropdown jelenik meg a pizzához tartozó jelenlegi adatokkal
+    * A "Save" gombra kattintva a pizzát módosítja az adatbázisban és a pizzas.html betöltődik, ahol a módosított pizza is kilistázódik
+    * A "Delete" gombra kattintva a pizzát törli az adatbázisból és a pizzas.html betöltődik, ahol a törölt pizza már nem listázódik kilistázásra
+    * A "Back" gombra kattintva  a pizzas.html oldalra lehet visszatérni
+
+-editRest.html:
+    * 4 input field jelenik meg a kiválasztott étteremhez tartozó jelenlegi adatokkal
+    * A "Save" gombra kattintva az éttermet módosítja az adatbázisban és az index.html betöltődik, így újabb kereséssel már a módosított étterem is listázódik ki
+    * A "Delete" gombra kattintva az éttermet törli az adatbázisból és az index.html betöltődik, így újabb kereséssel már a törölt étterem nem listázódik ki
+    * A "Back" gombra kattintva  a pizzas.html oldalra lehet visszatérni
+
+-newPizza.html:
+    * 3 input field + 1 select dropdown jelenik meg, és az összes mező kitöltése kötelező
+    * Az "Add" gombra kattintva egy új pizzát keletkezik az adott étteremhez tartozó pizzák táblában + a pizzas.html betöltődik, ahol az újonnan felvett pizzák (is) kilistázódik
+    * A "Back" gombra kattintva  a pizzas.html oldalra lehet visszatérni
+
+**Routing**
+
