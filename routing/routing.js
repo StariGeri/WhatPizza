@@ -43,8 +43,7 @@ router.get(
 );
 //edit a restaurant page
 router.get(
-  "/restaurant/edit/:id",
-  fetchRestByIdMW(dataRepo),
+  "/editRest/:restId",
   renderingMW(dataRepo, "editRest")
 );
 // post request for editing a restaurant
@@ -60,7 +59,7 @@ router.get(
   redirectMW(dataRepo, "/search")
 );
 // add a new pizza to a restaurant
-router.get("pizzas/add/:restaurantId", renderingMW(dataRepo, "newPizza"));
+router.get("/newPizza", renderingMW(dataRepo, "newPizza"));
 // post request for adding a new pizza
 router.post(
   "pizzas/add/:restaurantId",
@@ -75,7 +74,7 @@ router.get(
 );
 // display the edit a pizza page
 router.get(
-  "pizzas/edit/:pizzaId",
+  "/editPizza/:pizzaId",
   fetchPizzaByIdMW(dataRepo),
   renderingMW(dataRepo, "editPizza")
 );

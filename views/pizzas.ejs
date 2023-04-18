@@ -22,7 +22,7 @@
                     <th>Sauce</th>
                 </tr>
                 <% pizzas.forEach(pizza => { %>
-                    <tr class="table-row" onclick="window.location='pizzas/edit/<%= pizza.pizzaId %>'">
+                    <tr class="table-row" onclick="window.location='/editPizza/<%= pizza.pizzaId %>'">
                         <td><%= pizza.name %></td>
                         <td><%= pizza.size %></td>
                         <td><%= pizza.price %></td>
@@ -33,11 +33,10 @@
         </div>
         <div class="buttons">
             <a class="button-link" href="/newPizza"><button class="filledButton">New</button></a>
-            <a class="button-link" href="/editRest"><button class="outlineButton">Edit</button></a>
+            <a class="button-link" href="/editRest/restId"><button class="outlineButton">Edit</button></a>
             <a class="button-link" href="/search"><button class="outlineButton">Back</button></a>
         </div>
 </body>
-
 </html>
 <script>
     // cursor follow
