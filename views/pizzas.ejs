@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta lang="en">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pizzas | WhatPizza </title>
-    <link rel="stylesheet" href="/style.css">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Varela+Round&display=swap"
-        rel="stylesheet">
-</head>
-
+<%- include('header') -%>
 <body>
     <section class="pizza-section">
         <h2 class="title">WhatPizza</h2>
@@ -38,24 +21,20 @@
                     <th>Price (Ft)</th>
                     <th>Sauce</th>
                 </tr>
-                <tr class="table-row" class="table-row" onclick="window.location='editPizza.html'">
-                    <td>Quattro Formaggi</td>
-                    <td>32</td>
-                    <td>3200</td>
-                    <td>Tomato</td>
-                </tr>
-                <tr class="table-row" class="table-row" onclick="window.location='editPizza.html'">
-                    <td>Special Pizza</td>
-                    <td>28</td>
-                    <td>2800</td>
-                    <td>Sour Cream</td>
-                </tr>
+                <% pizzas.forEach(pizza => { %>
+                    <tr class="table-row" onclick="window.location='pizzas/edit/<%= pizza.pizzaId %>'">
+                        <td><%= pizza.name %></td>
+                        <td><%= pizza.size %></td>
+                        <td><%= pizza.price %></td>
+                        <td><%= pizza.sauce %></td>
+                    </tr>
+                    <% }) %>
             </table>
         </div>
         <div class="buttons">
-            <a class="button-link" href="newPizza.html"><button class="filledButton">New</button></a>
-            <a class="button-link" href="editRest.html"><button class="outlineButton">Edit</button></a>
-            <a class="button-link" href="search.html"><button class="outlineButton">Back</button></a>
+            <a class="button-link" href="/newPizza"><button class="filledButton">New</button></a>
+            <a class="button-link" href="/editRest"><button class="outlineButton">Edit</button></a>
+            <a class="button-link" href="/search"><button class="outlineButton">Back</button></a>
         </div>
 </body>
 

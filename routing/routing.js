@@ -1,9 +1,12 @@
+const express = require("express");
+const router = express.Router();
+
 const renderingMW = require("../middleware/general/renderingMW");
 const redirectMW = require("../middleware/general/redirectingMW");
 
 const fetchRestByNameMW = require("../middleware/restaurant/fetchRestByNameMW");
 const fetchRestByIdMW = require("../middleware/restaurant/fetchRestByIdMW");
-const editRestaurantMW = require("../middleware/restaurant/editRestaurantsMW");
+const editRestaurantMW = require("../middleware/restaurant/editRestaurantMW");
 const deleteRestaurantMW = require("../middleware/restaurant/deleteRestaurantMW");
 const addNewRestaurantMW = require("../middleware/restaurant/addNewRestaurantMW");
 
@@ -13,70 +16,74 @@ const fetchPizzaByIdMW = require("../middleware/pizzas/fetchPizzaByIdMW");
 const editPizzaMW = require("../middleware/pizzas/editPizzaMW");
 const fetchPizzasFromRestMW = require("../middleware/pizzas/fetchPizzasFromRestMW");
 
+const dataRepo = {};
+
 //homepage
-app.get("/", renderingMW(dataRepo, "index.html"));
+router.get('/', renderingMW(dataRepo,"index"));
 
 //search results page for restaurants
-app.get(
+router.get(
   "/search",
   fetchRestByNameMW(dataRepo),
-  renderingMW(dataRepo, "search.html")
+  renderingMW(dataRepo, "search")
 );
 // add a new restaurant page
-app.get("/restaurant/add", renderingMW(dataRepo, "newRest.html"));
+router.get("/newRest", renderingMW(dataRepo, "newRest"));
 // post request for adding a new restaurant
-app.post(
+router.post(
   "/restaurant/add",
   addNewRestaurantMW(dataRepo),
   redirectMW(dataRepo, "/search")
 );
 //pizzas of a restaurant
-app.get(
-  "/pizzas/:restaurantId",
-  fetchPizzasFromRestMW(dataRepo),
-  renderingMW(dataRepo, "/pizzas/:restaurantId")
+router.get(
+  "/pizzas/:id",
+  fetchPizzaByIdMW(dataRepo),
+  renderingMW(dataRepo, "pizzas")
 );
 //edit a restaurant page
-app.get(
-  "/restaurant/edit/:restaurantId",
+router.get(
+  "/restaurant/edit/:id",
   fetchRestByIdMW(dataRepo),
-  renderingMW(dataRepo, "editRest.html")
+  renderingMW(dataRepo, "editRest")
 );
 // post request for editing a restaurant
-app.post(
+router.post(
   "/restaurant/edit/:restaurantId",
   editRestaurantMW(dataRepo),
   redirectMW(dataRepo, "/search")
 );
 // delete a restaurant
-app.get(
+router.get(
   "/restaurant/delete/:restaurantId",
   deleteRestaurantMW(dataRepo),
   redirectMW(dataRepo, "/search")
 );
 // add a new pizza to a restaurant
-app.get("pizzas/add/:restaurantId", renderingMW(dataRepo, "newPizza.html"));
+router.get("pizzas/add/:restaurantId", renderingMW(dataRepo, "newPizza"));
 // post request for adding a new pizza
-app.post(
+router.post(
   "pizzas/add/:restaurantId",
   addNewPizzaMW(dataRepo),
   redirectMW(dataRepo, "/pizzas/:restaurantId")
 );
 //delete a pizza
-app.get(
+router.get(
   "pizzas/delete/:pizzaId",
   deletePizzaMW(dataRepo),
   redirectMW(dataRepo, "/pizzas/:restaurantId")
 );
 // display the edit a pizza page
-app.get(
+router.get(
   "pizzas/edit/:pizzaId",
   fetchPizzaByIdMW(dataRepo),
-  renderingMW(dataRepo, "editPizza.html")
+  renderingMW(dataRepo, "editPizza")
 );
 // post request for editing a pizza
-app.post(
+router.post(
   "pizzas/edit/:pizzaId",
   editPizzaMW(dataRepo),
   redirectMW(dataRepo, "/pizzas/:restaurantId")
 );
+
+module.exports = router;

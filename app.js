@@ -1,9 +1,13 @@
 const express = require("express");
 const app = express();
+const routes = require("./routing/routing");
 const PORT = 3000;
-app.use(express.static("public"));
+
+app.use(express.static('public'));
 app.set("view engine", "ejs");
 
+// use the routes defined in the routing.js file
+app.use(routes);
 
 app.listen(PORT, (error) => {
   if (!error)

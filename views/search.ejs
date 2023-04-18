@@ -1,21 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta lang="en">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Search | WhatPizza </title>
-    <link rel="stylesheet" href="/style.css">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Varela+Round&display=swap"
-        rel="stylesheet">
-</head>
-
+<%- include('header') -%>
 <body>
     <section class="search-section">
         <h2 class="title">WhatPizza</h2>
@@ -40,23 +24,19 @@
                     <th>Parking</th>
                     <th>Delivery</th>
                 </tr>
-                <tr class="table-row" onclick="window.location='pizzas.html'">
-                    <td>Vapiano</td>
-                    <td>1111. Bolt utca 22.</td>
-                    <td>No</td>
-                    <td>Yes - Wolt</td>
+                <% restaurants.forEach(rest => { %>
+                <tr class="table-row" onclick="window.location='pizzas/<%= rest.id %>'">
+                    <td><%= rest.name %></td>
+                    <td><%= rest.address %></td>
+                    <td><%= rest.parking %></td>
+                    <td><%= rest.delivery %></td>
                 </tr>
-                <tr class="table-row" onclick="window.location='pizzas.html'">
-                    <td>Vapiano</td>
-                    <td>1221. Fo utca 10.</td>
-                    <td>Yes</td>
-                    <td>Yes</td>
-                </tr>
+                <% }) %>
             </table>
         </div>
         <div class="button-container">
-            <a class="button-link" href="newRest.html"><button class="filledButton">New</button></a>
-            <a class="button-link" href="index.html"><button class="outlineButton">Back</button></a>
+            <a class="button-link" href="newRest"><button class="filledButton">New</button></a>
+            <a class="button-link" href="/"><button class="outlineButton">Back</button></a>
         </div>
     </section>
 

@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta lang="en">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edit Pizza | WhatPizza </title>
-    <link rel="stylesheet" href="/style.css">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Varela+Round&display=swap"
-        rel="stylesheet">
-</head>
+<%- include('header') -%>
 
 <body>
     <div class="newSection">
@@ -22,34 +6,30 @@
         <div class="newContainer">
             <div class="contentWrapper">
                 <div class="subtitle-wrapper">
-                    <h3 class="subtitleNew">Edit the <span class="highlight"> Pizza</span></h3>
+                    <h3 class="subtitleNew">Edit the <span class="highlight"> Restaurant</span></h3>
                 </div>
                 <div class="wrapper">
                     <form id="form" class="form" role="form">
                         <div class="form-group">
-                            <label class="label" for="pizza">Pizza</label>
-                            <input class="input" type="text" name="pizza" id="pizza" placeholder="Quattro Formaggi">
+                            <label class="label" for="Name">Name</label>
+                            <input class="input" type="text" name="Name" id="Name" placeholder="Vapiano">
                         </div>
                         <div class="form-group">
-                            <label class="label" for="size">Size (cm)</label>
-                            <input class="input" type="text" name="size" id="size" placeholder="32">
+                            <label class="label" for="Address">Address</label>
+                            <input class="input" type="text" name="Address" id="Address" placeholder="1111. Bolt utca 22.">
                         </div>
                         <div class="form-group">
-                            <label class="label" for="price">Price (Ft)</label>
-                            <input class="input" type="text" name="price" id="price" placeholder="3200">
+                            <label class="label" for="Parking">Parking</label>
+                            <input class="input" type="text" name="Parking" id="Parking" placeholder="No">
                         </div>
                         <div class="form-group">
-                            <label class="label" for="sauce">Sauce</label>
-                            <select class="input" name="sauce" id="sauce">
-                                <option value="tomato">Tomato</option>
-                                <option value="bbq">BBQ</option>
-                                <option value="garlic">Garlic</option>
-                            </select>
+                            <label class="label" for="Delivery">Delivery</label>
+                            <input class="input" type="text" name="Delivery" id="Delivery" placeholder="Yes - Wolt">
                         </div>
                     </form>
                     <div class="button-container">
-                        <a class="button-link" href="pizzas.html"><button class="filledButton">Save</button></a>
-                        <a class="button-link" href="pizzas.html"><button class="negButton">Delete</button></a>
+                        <a class="button-link" href="search.html"><button class="filledButton">Save</button></a>
+                        <a class="button-link" href="search.html"><button class="negButton">Delete</button></a>
                         <a class="button-link" href="pizzas.html"><button class="outlineButton">Back</button></a>
                     </div>
                 </div>

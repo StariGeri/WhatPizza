@@ -6,6 +6,6 @@
  */
 module.exports = function (dataRepository, pageName) {
     return function (req, res, next) {
-        res.render(pageName);
+        res.render(pageName,res.locals);
     };
 };
