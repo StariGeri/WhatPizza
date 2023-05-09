@@ -3,9 +3,20 @@
  * @param {*} dataRepository
  * @returns
  */
+const requireOption = require("../general/requireOption");
 module.exports = function (dataRepository) {
     return function (req, res, next) {
-      //TODO: implement this MW
-      // send request to the database to delete the restaurant with the given id
+
+      if (typeof res.locals.restaurant === "undefined") {
+        return next();
+      }
+
+      res.locals.restaurant.remove(err => {
+        if (err) {
+            return next(err);
+        }
+
+        return res.redirect('/search');
+      })
     };
   };

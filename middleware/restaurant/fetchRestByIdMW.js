@@ -3,9 +3,22 @@
  * @param {*} dataRepository
  * @returns
  */
+
+const requireOption = require("../general/requireOption");
+
+
 module.exports = function (dataRepository) {
+
+  const RestaurantModel = requireOption(dataRepository, "RestaurantModel");
     return function (req, res, next) {
-      //TODO: implement this MW
-      // send request to the database to fetch the restaurant with the given id
+
+      RestaurantModel.findOne({ _id: req.params.restaurantId }, (err, restaurant) => {
+        if (err || !restaurant) {
+          return next(err);
+        }
+
+        res.locals.restaurant = restaurant;
+        return next();
+      });
     };
   };
